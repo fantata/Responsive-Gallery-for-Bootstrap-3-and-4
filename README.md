@@ -4,10 +4,10 @@ A really simple image gallery with thumbnails for bootstrap.
 
 # Usage:
 
-$('.gallery').gallery([
+`$('.gallery').gallery([
 	'http://via.placeholder.com/800x600',
 	'http://via.placeholder.com/800x601'
-]);
+]);`
 
 See index.html for full example. 
 
