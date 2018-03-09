@@ -13,7 +13,7 @@ See index.html for full example.
 
 # Deps:
 
-*Bootstrap  
-*jQuery  
-*chevron-left.svg (from Octicons)  
-*chevron-right.svg (from Octicons)  
+Bootstrap  
+jQuery  
+chevron-left.svg (from Octicons)  
+chevron-right.svg (from Octicons)  
