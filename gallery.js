@@ -17,7 +17,7 @@
 			var self = this;
 			$('.thumb').on('click', function() {
 				curImageIndex = $(this).attr('data-index');
-				self.showImage();
+				self.showImage();	
 			});
 
 			$('.icon').on('click', function() {
@@ -39,7 +39,7 @@
 		},
 
 		baseMarkup() {
-			container.append('<div style="margin-bottom: 4px; padding: 0; background-position: center; background-size: contain; background-repeat: no-repeat;" class="col-md-12" id="fantata-gallery-main"><img class="icon" id="icon-left" src="/chevron-left.svg" /><img class="icon" id="icon-right" src="/chevron-right.svg" /></div>');
+			container.append('<div style="margin-bottom: 4px; padding: 0; background-position: center; background-size: contain; background-repeat: no-repeat; background-color: #222;" class="col-md-12" id="fantata-gallery-main"><img class="icon" id="icon-left" src="/left-arrow.png" /><img class="icon" id="icon-right" src="/right-arrow.png" /></div>');
 			container.append('<div style="padding: 0;" class="col-md-12" id="fantata-gallery-thumbs"></div>');
 
 			main = $('#fantata-gallery-main');
@@ -52,31 +52,34 @@
 
 			$('#icon-left').css('float', 'left');
 			$('#icon-left').css('height', '40px');
+			$('#icon-left').css('margin-left', '20px');
 
 			$('#icon-right').css('float', 'right');
 			$('#icon-right').css('height', '40px');
+			$('#icon-right').css('margin-right', '20px');
 
 			this.refreshMarkup();
 		},
 
 		refreshMarkup() {
 			contWidth = container.width();
-			mainHeight = contWidth * 0.6;
-			thumbHeight = contWidth * 0.15;
+			mainHeight = contWidth * 0.5;
+			//thumbHeight = contWidth * 0.15;
 			
 			main.css('height', mainHeight);
-			thumbs.css('height', thumbHeight);
+			//thumbs.css('height', thumbHeight);
 		},
 
 		loadThumbs() {
 
-			var thW = (contWidth / 8) - 0.5;
+			var thW = (contWidth / 8) - 2.3;
 			var thH = thW * .75;
 			var x = 0;
 			images.map(function(img) {
 				thumbs.append('<div class="thumb" data-index="'+x+'" style="cursor: pointer; background: url('+img+'); background-size: 100%; margin: 1px; height: '+thH+'px; width: '+thW+'px; float: left;"></div>');
 				x++;
 			});
+			thumbs.append('<br style="clear: both;" />');
 		},
 
 		showImage() {
